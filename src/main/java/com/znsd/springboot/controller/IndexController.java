@@ -48,6 +48,7 @@ public class IndexController {
             map.put("total",pa.getTotalElements());
             map.put("rows",pa.getContent());
         }
+        System.out.println("返回数据:"+map);
         return map;
     }
     @ResponseBody
