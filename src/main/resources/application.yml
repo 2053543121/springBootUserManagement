@@ -1,0 +1,31 @@
+#配置dataSource
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+  jpa:
+    hibernate:
+      ddl-auto: update
+    #设置显示sql语句
+    show-sql: true
+    #配置热部署
+    devtools:
+      livereload:
+        enabled: true #是否支持livereload
+        port: 35729
+      restart:
+        enabled: true #是否支持热部署
+  #redis配置
+  redis:
+    host: 192.168.75.128
+    port: 6380
+    timeout: 3000 # 超时时间
+    lettuce:
+      pool:
+        max-active: 200 #连接池最大连接数（使用负值表示没有限制）
+        max-idle: 20 # 连接池中的最大空闲连接
+        min-idle: 5 #连接池中的最小空闲连接
+        max-wait: -1 # 连接池最大阻塞等待时间（使用负值表示没有限制）
+    database: 1
